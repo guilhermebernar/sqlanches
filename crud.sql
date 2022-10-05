@@ -44,12 +44,18 @@ WHERE
 	c.nome = 'Georgia' 
 ;
 -----------------------------------
-UPDATE
-  clientes
-SET
-  lealdade = 30
+SELECT
+	COUNT(pp)*6
+FROM
+	produtos_pedidos pp
+JOIN
+	pedidos pe ON pe.id = pp.pedido_id
+JOIN 
+	produtos pr ON pr.id = pp.produto_id 
+JOIN
+	clientes c ON c.id = pe.cliente_id
 WHERE 
-  nome = 'Georgia'
+  c.nome = 'Georgia'
 ;
 -----------------------------------
 DELETE FROM

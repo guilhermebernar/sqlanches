@@ -59,4 +59,6 @@ JOIN
 	pedidos pe ON pe.id = pp.pedido_id
 JOIN 
 	produtos pr ON pr.id = pp.produto_id
-GROUP BY nome;
+GROUP BY nome
+ORDER BY nome ASC
+;
